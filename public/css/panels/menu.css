@@ -1,0 +1,775 @@
+/* Menu Panel Styles - Clean & Minimalist Design */
+#menuView {
+    padding: 2rem 0;
+    background: linear-gradient(135deg, #fef7cd 0%, #fed7aa 50%, #fbbf24 100%);
+    min-height: 100vh;
+}
+
+#menuView .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Menu Header */
+.menu-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.btn-back-simple {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #D97706;
+    border-radius: 25px;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #B45309;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.btn-back-simple:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-50%) translateX(-5px);
+    box-shadow: 0 4px 15px rgba(217, 119, 6, 0.2);
+}
+
+.greeting-section h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #B45309;
+    margin-bottom: 0.5rem;
+}
+
+.greeting-subtitle {
+    color: #B45309;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+/* Menu Layout */
+.menu-layout {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* Menu Content */
+.menu-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Secciones Expandibles */
+.menu-section-expandable {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    border: 2px solid #F59E0B;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.menu-section-expandable:hover {
+    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.15);
+}
+
+/* Header de Sección Clickeable */
+.section-header-clickable {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(245, 158, 11, 0.05);
+    border-bottom: 1px solid rgba(245, 158, 11, 0.1);
+}
+
+.section-header-clickable:hover {
+    background: rgba(245, 158, 11, 0.1);
+    transform: translateX(3px);
+}
+
+.section-header-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.section-icon {
+    font-size: 1.5rem;
+}
+
+.section-header-clickable h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #B45309;
+    margin: 0;
+}
+
+.item-count {
+    font-size: 0.875rem;
+    color: #6B7280;
+    font-weight: 500;
+    background: rgba(245, 158, 11, 0.15);
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+}
+
+.expand-arrow {
+    font-size: 1.125rem;
+    color: #F59E0B;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.section-header-clickable:hover .expand-arrow {
+    transform: scale(1.2);
+}
+
+/* Menu Items Container - MAYOR SEPARACIÓN */
+.menu-items-container {
+    padding: 0 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* Removemos gap y usamos margin */
+    transition: all 0.3s ease;
+}
+
+/* Menu Item */
+.menu-item {
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid rgba(245, 158, 11, 0.3);
+    border-radius: 15px;
+    padding: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    position: relative; /* Añadido para el efecto before */
+    margin-bottom: 1.5rem; /* Separación forzada entre items */
+}
+
+/* Remover margen del último item */
+.menu-item:last-child {
+    margin-bottom: 0;
+}
+
+.menu-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.menu-item:hover::before {
+    left: 100%;
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(245, 158, 11, 0.15);
+    border-color: #F59E0B;
+}
+
+/* Item Details */
+.item-details {
+    flex: 1;
+}
+
+.item-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1F2937;
+    margin-bottom: 0.25rem;
+}
+
+.item-description {
+    color: #6B7280;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Item Right Section */
+.item-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+.item-price {
+    color: #F59E0B;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+/* Quantity Controls */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.qty-btn {
+    width: 35px;
+    height: 35px;
+    border: 2px solid #F59E0B;
+    background: white;
+    color: #F59E0B;
+    border-radius: 8px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.qty-btn:hover {
+    background: #F59E0B;
+    color: white;
+    transform: scale(1.1);
+}
+
+.qty-btn:active {
+    transform: scale(0.95);
+}
+
+.qty-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.qty-display {
+    min-width: 45px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FEF3C7;
+    border: 2px solid #F59E0B;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.125rem;
+    color: #B45309;
+    transition: all 0.3s ease;
+}
+
+.qty-display.updated {
+    background: rgba(245, 158, 11, 0.3);
+    transform: scale(1.1);
+}
+
+/* Order Summary Sidebar */
+.order-summary-sidebar {
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
+}
+
+.summary-card {
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #F59E0B;
+    border-radius: 20px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.summary-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #B45309;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Order Items */
+.order-items {
+    margin-bottom: 1rem;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+    font-size: 0.9rem;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.order-item-name {
+    color: #1F2937;
+    font-weight: 500;
+}
+
+.order-item-price {
+    color: #F59E0B;
+    font-weight: 600;
+}
+
+/* Order Total */
+.order-total {
+    margin-top: 1rem;
+}
+
+.total-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #FEF3C7;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+
+.total-label {
+    color: #B45309;
+}
+
+.total-price {
+    color: #F59E0B;
+    font-size: 1.25rem;
+}
+
+/* Summary Button */
+.summary-btn {
+    width: 100%;
+    background: #D97706;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.summary-btn:hover {
+    background: #B45309;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(217, 119, 6, 0.3);
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #9CA3AF;
+}
+
+.empty-state p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Estilos específicos para cada sección */
+.menu-section-expandable:nth-child(1) {
+    border-color: #10B981; /* Verde para tradicionales */
+}
+
+.menu-section-expandable:nth-child(1) .section-header-clickable {
+    background: rgba(16, 185, 129, 0.05);
+    border-bottom-color: rgba(16, 185, 129, 0.1);
+}
+
+.menu-section-expandable:nth-child(1) .section-header-clickable h2 {
+    color: #047857;
+}
+
+.menu-section-expandable:nth-child(1) .expand-arrow {
+    color: #10B981;
+}
+
+.menu-section-expandable:nth-child(2) {
+    border-color: #8B5CF6; /* Morado para especiales */
+}
+
+.menu-section-expandable:nth-child(2) .section-header-clickable {
+    background: rgba(139, 92, 246, 0.05);
+    border-bottom-color: rgba(139, 92, 246, 0.1);
+}
+
+.menu-section-expandable:nth-child(2) .section-header-clickable h2 {
+    color: #6B21A8;
+}
+
+.menu-section-expandable:nth-child(2) .expand-arrow {
+    color: #8B5CF6;
+}
+
+.menu-section-expandable:nth-child(3) {
+    border-color: #3B82F6; /* Azul para bebidas */
+}
+
+.menu-section-expandable:nth-child(3) .section-header-clickable {
+    background: rgba(59, 130, 246, 0.05);
+    border-bottom-color: rgba(59, 130, 246, 0.1);
+}
+
+.menu-section-expandable:nth-child(3) .section-header-clickable h2 {
+    color: #1E40AF;
+}
+
+.menu-section-expandable:nth-child(3) .expand-arrow {
+    color: #3B82F6;
+}
+
+/* Animaciones */
+@keyframes itemAdded {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.menu-item.item-added {
+    animation: itemAdded 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .menu-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .order-summary-sidebar {
+        order: -1;
+        position: static;
+    }
+    
+    .summary-card {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    #menuView .container {
+        padding: 0 1rem;
+    }
+    
+    .menu-header {
+        margin-bottom: 1.5rem;
+    }
+    
+    .btn-back-simple {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        margin-bottom: 1rem;
+        display: block;
+        width: fit-content;
+    }
+    
+    .greeting-section h1 {
+        font-size: 1.75rem;
+    }
+    
+    .section-header-clickable {
+        padding: 1rem 1.25rem;
+    }
+    
+    .section-header-clickable h2 {
+        font-size: 1.125rem;
+    }
+    
+    .menu-items-container {
+        padding: 0 1.25rem 1.25rem;
+        gap: 0; /* Sin gap, solo margin */
+    }
+    
+    .menu-item {
+        padding: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 1.25rem; /* Separación tablet */
+    }
+    
+    .item-right {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .summary-card {
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 640px) {
+    #menuView {
+        padding: 1rem 0;
+    }
+    
+    .greeting-section h1 {
+        font-size: 1.5rem;
+    }
+    
+    .greeting-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .menu-section-expandable {
+        border-radius: 16px;
+    }
+    
+    .section-header-clickable {
+        padding: 0.875rem 1rem;
+    }
+    
+    .section-icon {
+        font-size: 1.25rem;
+    }
+    
+    .section-header-clickable h2 {
+        font-size: 1rem;
+    }
+    
+    .item-count {
+        font-size: 0.8rem;
+        padding: 0.2rem 0.4rem;
+    }
+    
+    .menu-items-container {
+        padding: 0 1rem 1rem;
+        gap: 0; /* Sin gap */
+    }
+    
+    .menu-item {
+        padding: 0.875rem;
+        border-radius: 12px;
+        margin-bottom: 1rem; /* Separación móvil */
+    }
+    
+    .item-name {
+        font-size: 1rem;
+    }
+    
+    .item-description {
+        font-size: 0.85rem;
+    }
+    
+    .item-price {
+        font-size: 1.125rem;
+    }
+    
+    .qty-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 1.125rem;
+    }
+    
+    .qty-display {
+        min-width: 40px;
+        height: 32px;
+        font-size: 1rem;
+    }
+    
+    .summary-card {
+        border-radius: 16px;
+        padding: 1rem;
+    }
+    
+    .summary-title {
+        font-size: 1.125rem;
+        margin-bottom: 1.25rem;
+    }
+    
+    .order-item {
+        font-size: 0.85rem;
+    }
+    
+    .total-line {
+        font-size: 1rem;
+        padding: 0.875rem;
+    }
+    
+    .total-price {
+        font-size: 1.125rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #menuView .container {
+        padding: 0 0.75rem;
+    }
+    
+    .btn-back-simple {
+        padding: 0.4rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .greeting-section h1 {
+        font-size: 1.375rem;
+    }
+    
+    .section-header-clickable {
+        padding: 0.75rem 0.875rem;
+    }
+    
+    .section-header-content {
+        gap: 0.5rem;
+    }
+    
+    .menu-items-container {
+        padding: 0 0.875rem 0.875rem;
+        gap: 0; /* Sin gap */
+    }
+    
+    .menu-item {
+        padding: 0.75rem;
+        margin-bottom: 0.875rem; /* Separación compacta */
+    }
+    
+    .item-name {
+        font-size: 0.95rem;
+        margin-bottom: 0.2rem;
+    }
+    
+    .item-description {
+        font-size: 0.8rem;
+    }
+    
+    .item-price {
+        font-size: 1rem;
+    }
+    
+    .qty-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 1rem;
+    }
+    
+    .qty-display {
+        min-width: 35px;
+        height: 28px;
+        font-size: 0.9rem;
+    }
+    
+    .summary-card {
+        padding: 0.875rem;
+    }
+    
+    .summary-title {
+        font-size: 1rem;
+    }
+    
+    .order-item {
+        padding: 0.625rem 0;
+        font-size: 0.8rem;
+    }
+    
+    .total-line {
+        font-size: 0.95rem;
+        padding: 0.75rem;
+    }
+    
+    .total-price {
+        font-size: 1rem;
+    }
+    
+    .summary-btn {
+        padding: 0.875rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 360px) {
+    #menuView .container {
+        padding: 0 0.5rem;
+    }
+    
+    .greeting-section h1 {
+        font-size: 1.25rem;
+    }
+    
+    .section-header-clickable {
+        padding: 0.625rem 0.75rem;
+    }
+    
+    .section-header-clickable h2 {
+        font-size: 0.9rem;
+    }
+    
+    .item-count {
+        font-size: 0.75rem;
+    }
+    
+    .menu-items-container {
+        padding: 0 0.75rem 0.75rem;
+        gap: 0; /* Sin gap */
+    }
+    
+    .menu-item {
+        padding: 0.625rem;
+        margin-bottom: 0.75rem; /* Separación mínima */
+    }
+    
+    .item-name {
+        font-size: 0.9rem;
+    }
+    
+    .item-description {
+        font-size: 0.75rem;
+    }
+    
+    .item-price {
+        font-size: 0.95rem;
+    }
+    
+    .qty-btn {
+        width: 26px;
+        height: 26px;
+        font-size: 0.9rem;
+    }
+    
+    .qty-display {
+        min-width: 32px;
+        height: 26px;
+        font-size: 0.85rem;
+    }
+    
+    .summary-card {
+        padding: 0.75rem;
+    }
+    
+    .total-line {
+        font-size: 0.9rem;
+        padding: 0.625rem;
+    }
+    
+    .summary-btn {
+        padding: 0.75rem;
+        font-size: 0.85rem;
+    }
+}

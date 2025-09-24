@@ -1,0 +1,530 @@
+/* Order Type Panel Styles - Inspired by the provided design */
+#orderTypeView {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #fef7cd 0%, #fed7aa 50%, #fbbf24 100%);
+    padding: 2rem 0;
+}
+
+#orderTypeView .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Admin Link */
+.admin-link {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.admin-link:hover {
+    opacity: 1;
+}
+
+/* Header Section */
+.header-section {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.crown-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.header-section h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #B45309;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(180, 83, 9, 0.1);
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: #B45309;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+/* Order Type Cards Container */
+.order-type-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Order Cards */
+.order-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 3px solid #F59E0B;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(245, 158, 11, 0.15);
+}
+
+.order-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.order-card:hover::before {
+    left: 100%;
+}
+
+.order-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(245, 158, 11, 0.25);
+    border-color: #D97706;
+}
+
+/* Card Icons */
+.card-icon {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.icon-bg {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.physical-bg {
+    background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+}
+
+.delivery-bg {
+    background: linear-gradient(135deg, #F59E0B, #D97706);
+}
+
+.icon-emoji {
+    font-size: 2.5rem;
+    z-index: 2;
+}
+
+.icon-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #EF4444;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.5rem;
+    border-radius: 8px;
+    border: 2px solid white;
+}
+
+.order-card:hover .icon-bg {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Card Content */
+.order-card h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 1rem;
+}
+
+.card-description {
+    font-size: 1rem;
+    color: #6B7280;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Features List */
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.features-list li {
+    color: #6B7280;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    padding: 0 1rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.features-list li::before {
+    content: '•';
+    color: #F59E0B;
+    font-weight: bold;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+/* Selection Buttons */
+.selection-btn {
+    width: 100%;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.physical-btn {
+    background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+    color: white;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.delivery-btn {
+    background: linear-gradient(135deg, #F59E0B, #D97706);
+    color: white;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+}
+
+.selection-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s, height 0.4s;
+}
+
+.selection-btn:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+.physical-btn:hover {
+    background: linear-gradient(135deg, #1D4ED8, #1E40AF);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+}
+
+.delivery-btn:hover {
+    background: linear-gradient(135deg, #D97706, #B45309);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+}
+
+/* Entrance Animations */
+.order-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideInUp 0.8s ease forwards;
+}
+
+.order-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+@keyframes slideInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header-section {
+    opacity: 0;
+    animation: fadeInDown 1s ease forwards;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .order-type-cards {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    #orderTypeView .container {
+        padding: 0 1rem;
+    }
+    
+    .header-section {
+        margin-bottom: 3rem;
+    }
+    
+    .header-section h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    .subtitle {
+        font-size: 1.125rem;
+    }
+    
+    .order-type-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 450px;
+    }
+    
+    .order-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .order-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .card-description {
+        font-size: 0.95rem;
+        margin-bottom: 1.25rem;
+    }
+    
+    .crown-icon {
+        font-size: 3rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .icon-bg {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .icon-emoji {
+        font-size: 2rem;
+    }
+    
+    .features-list {
+        margin: 1.25rem 0;
+    }
+    
+    .features-list li {
+        font-size: 0.9rem;
+        margin-bottom: 0.6rem;
+        padding: 0 0.5rem;
+    }
+    
+    .selection-btn {
+        padding: 1rem 1.5rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 640px) {
+    #orderTypeView {
+        padding: 1.5rem 0;
+    }
+    
+    .header-section {
+        margin-bottom: 2.5rem;
+    }
+    
+    .header-section h1 {
+        font-size: 2.25rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .order-type-cards {
+        max-width: 100%;
+        gap: 1.25rem;
+    }
+    
+    .order-card {
+        padding: 1.75rem 1.25rem;
+        border-radius: 16px;
+    }
+    
+    .order-card h3 {
+        font-size: 1.375rem;
+    }
+    
+    .card-description {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .crown-icon {
+        font-size: 2.5rem;
+    }
+    
+    .icon-bg {
+        width: 70px;
+        height: 70px;
+        border-radius: 16px;
+    }
+    
+    .icon-emoji {
+        font-size: 1.75rem;
+    }
+    
+    .features-list li {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+        padding: 0 0.25rem;
+    }
+    
+    .selection-btn {
+        padding: 0.875rem 1.25rem;
+        font-size: 0.9rem;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    #orderTypeView .container {
+        padding: 0 0.75rem;
+    }
+    
+    .header-section h1 {
+        font-size: 1.875rem;
+    }
+    
+    .subtitle {
+        font-size: 0.95rem;
+    }
+    
+    .order-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .order-card h3 {
+        font-size: 1.25rem;
+    }
+    
+    .card-description {
+        font-size: 0.85rem;
+    }
+    
+    .crown-icon {
+        font-size: 2.25rem;
+    }
+    
+    .icon-bg {
+        width: 60px;
+        height: 60px;
+        border-radius: 14px;
+    }
+    
+    .icon-emoji {
+        font-size: 1.5rem;
+    }
+    
+    .icon-badge {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.4rem;
+        border-radius: 6px;
+    }
+    
+    .features-list {
+        margin: 1rem 0;
+    }
+    
+    .features-list li {
+        font-size: 0.8rem;
+        margin-bottom: 0.45rem;
+        gap: 0.4rem;
+    }
+    
+    .features-list li::before {
+        font-size: 1rem;
+    }
+    
+    .selection-btn {
+        padding: 0.75rem 1rem;
+        font-size: 0.85rem;
+        letter-spacing: 0.25px;
+    }
+}
+
+@media (max-width: 360px) {
+    .header-section h1 {
+        font-size: 1.625rem;
+        line-height: 1.1;
+    }
+    
+    .subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .order-card {
+        padding: 1.25rem 0.875rem;
+    }
+    
+    .order-card h3 {
+        font-size: 1.125rem;
+    }
+    
+    .card-description {
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .features-list li {
+        font-size: 0.75rem;
+    }
+    
+    .selection-btn {
+        padding: 0.625rem 0.875rem;
+        font-size: 0.8rem;
+    }
+}
